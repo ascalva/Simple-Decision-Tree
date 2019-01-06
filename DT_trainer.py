@@ -13,6 +13,15 @@ import sys
 #              a decision tree.
 #
 
+def open_file_pointer(path_classifier):
+    global file_pointer
+    file_pointer = open(path_classifier, "w")
+
+
+def close_file_pointer():
+    file_pointer.close()
+
+
 def gini(p_muffin, p_cupcake):
     """
     Calculates the gini index using the probability of finding a
@@ -199,25 +208,25 @@ def emit_calls():
     file_pointer.write(main_f.replace("\t", "    "))
 
 
-def main():
-    # Makes my life easier by making the file pointer into a global data
-    global file_pointer
+# def main():
+#     # Makes my life easier by making the file pointer into a global data
+#     global file_pointer
+#
+#     if len(sys.argv) != 2:
+#         print("Usage: python3 [trainer program] [training data]")
+#         return
+#
+#     path_data       = sys.argv[1]
+#     path_classifier = "DT_classifier.py"
+#     train_data      = pd.read_csv(path_data)
+#     file_pointer    = open(path_classifier, "w")
+#
+#     # Write the decision tree and emit all the contents of the program so that
+#     # it is runnable.
+#     emit_header()
+#     emit_decision_tree(train_data)
+#     emit_calls()
+#
+#     file_pointer.close()
 
-    if len(sys.argv) != 2:
-        print("Usage: python3 [trainer program] [training data]")
-        return
-
-    path_data       = sys.argv[1]
-    path_classifier = "DT_classifier.py"
-    train_data      = pd.read_csv(path_data)
-    file_pointer    = open(path_classifier, "w")
-
-    # Write the decision tree and emit all the contents of the program so that
-    # it is runnable.
-    emit_header()
-    emit_decision_tree(train_data)
-    emit_calls()
-
-    file_pointer.close()
-
-main()
+# main()
