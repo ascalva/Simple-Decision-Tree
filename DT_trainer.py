@@ -193,7 +193,7 @@ def emit_calls():
            + "\tdata = pd.read_csv(path)\n" \
            + "\tfor i in range(0, data.count()[\"Type\"]):\n" \
            + "\t\tdata.at[i, \"Type\"] = my_classifier_function(data.iloc[[i]])\n" \
-           + "\t\tdata.to_csv(\"HW_05_Serrano_Alberto_MyClassifications.csv\", index=False)\n\n" \
+           + "\t\tdata.to_csv(\"DT_classifications.csv\", index=False)\n\n" \
            + "main()\n"
 
     file_pointer.write(main_f.replace("\t", "    "))
@@ -208,7 +208,7 @@ def main():
         return
 
     path_data       = sys.argv[1]
-    path_classifier = "HW_05_Serrano_Alberto_Classifier.py"
+    path_classifier = "DT_classifier.py"
     train_data      = pd.read_csv(path_data)
     file_pointer    = open(path_classifier, "w")
 
