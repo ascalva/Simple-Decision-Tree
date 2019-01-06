@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import sys
-from DT_trainer import open_file_pointer, close_file_pointer, emit_calls, emit_header, emit_decision_tree
+from DecisionTree.DT_trainer import open_file_pointer, close_file_pointer, emit_calls, emit_header, emit_decision_tree
 
 #
 # filename: DT.py
